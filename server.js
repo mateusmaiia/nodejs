@@ -1,11 +1,7 @@
-import { createServer} from 'node:http'
+import { fastify } from "fastify";
 
-const server = createServer((req, res) => {
-  res.write('oi')
+const server = fastify()
 
-  return res.end()
-
+server.listen({
+  port: 1889
 })
-
-
-server.listen(1889)
