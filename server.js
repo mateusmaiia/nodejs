@@ -5,7 +5,8 @@ const database = new DatabaseMemory()
 const server = fastify()
 
 server.get('/videos', (req, res) => {
-  const videos = database.list()
+  const search  = req.query.search
+  const videos = database.list(search)
   
   console.log(videos)
 
