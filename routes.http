@@ -1,0 +1,29 @@
+POST http://localhost:1889/videos
+Content-Type: application/json
+
+{
+  "title": "Título do video",
+  "description": "Descrição do video",
+  "duration": 180
+}
+
+###
+
+GET http://localhost:1889/videos
+
+###
+
+PUT http://localhost:1889/videos/89b8632f-1143-4184-ace2-2e384a0d8782
+Content-Type: application/json
+
+{
+  "title": "Título Novo do video",
+  "description": "Descrição Nova do video",
+  "duration": 190
+}
+
+###
+
+DELETE http://localhost:1889/videos/89b8632f-1143-4184-ace2-2e384a0d8782
+
+###
