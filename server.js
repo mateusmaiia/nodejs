@@ -1,15 +1,15 @@
 import { fastify } from "fastify";
-import { DatabaseMemory } from "./database-memory.js";
+import 'dotenv/config'
+import { DatabasePostgres } from "./database-postgres.js";
 
-const database = new DatabaseMemory()
+
+const database = new DatabasePostgres()
 const server = fastify()
 
 server.get('/videos', (req, res) => {
   const search  = req.query.search
   const videos = database.list(search)
   
-  console.log(videos)
-
   return videos
 })
 
