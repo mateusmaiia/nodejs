@@ -6,17 +6,17 @@ import { DatabasePostgres } from "./database-postgres.js";
 const database = new DatabasePostgres()
 const server = fastify()
 
-server.get('/videos', (req, res) => {
+server.get('/videos',async (req, res) => {
   const search  = req.query.search
-  const videos = database.list(search)
+  const videos = await database.list(search)
   
   return videos
 })
 
-server.post('/videos', (req, reply) => {
+server.post('/videos', async (req, reply) => {
   const {title, description, duration} = req.body
 
-  database.create(
+  await database.create(
     {
       title,
       description,
@@ -50,5 +50,6 @@ server.delete('/videos/:id', (req, res) => {
 })
 
 server.listen({
-  port: 1889
+  host: '0.0.0.0',
+  port: process.env.PORT ?? 1889
 })
