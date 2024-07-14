@@ -13,17 +13,17 @@ GET http://localhost:1889/videos
 
 ###
 
-PUT http://localhost:1889/videos/89b8632f-1143-4184-ace2-2e384a0d8782
+PUT http://localhost:1889/videos/4dfc2569-1ee8-4cd7-9256-446e7efa95e0
 Content-Type: application/json
 
 {
-  "title": "Título Novo do video",
+  "title": "Título Novo do video caraii",
   "description": "Descrição Nova do video",
   "duration": 190
 }
 
 ###
 
-DELETE http://localhost:1889/videos/89b8632f-1143-4184-ace2-2e384a0d8782
+DELETE http://localhost:1889/videos/4dfc2569-1ee8-4cd7-9256-446e7efa95e0
 
 ###
